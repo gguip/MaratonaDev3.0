@@ -11,7 +11,7 @@
         <header>
             <img
             class="logo" 
-            src="logo.png"
+            src="/logo.png"
             alt="DOE">
             <h2>A sua doação importa!</h2>
             <p>Você pode salvar até 3 vidas com 1 doação</p>
@@ -23,7 +23,7 @@
 
         <section class="form hide">
             <h2>Entre na lista de doadores...</h2>
-            <form action="/">
+            <form action="/" method="POST">
             <input 
             type="text" 
             name="name"
@@ -45,22 +45,15 @@
             <h2>Últimos <span>doadores</span></h2>
 
             <section class="donors">
-                <div class="donor">
-                    <div class="blood">AB+</div>
-                    <p>Guilherme</p>
-                </div>
-                <div class="donor">
-                    <div class="blood">O-</div>
-                    <p>João</p>
-                </div>
-                <div class="donor">
-                    <div class="blood">A</div>
-                    <p>Igor</p>
-                </div>
-                <div class="donor">
-                    <div class="blood">B</div>
-                    <p>Robson</p>
-                </div>
+
+                {% for donor in donors %}
+
+                    <div class="donor">
+                        <div class="blood">{{donor.blood}}</div>
+                        <p>{{donor.name}}</p>
+                    </div>
+
+                {%endfor%}
             </section>
         </main>
 
